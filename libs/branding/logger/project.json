@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/branding/logger/src",
+  "prefix": "myorg",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/branding/logger/src/test.ts",
+        "tsConfig": "libs/branding/logger/tsconfig.spec.json",
+        "karmaConfig": "libs/branding/logger/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/branding/logger/**/*.ts",
+          "libs/branding/logger/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:branding", "type:branding-logger"]
+}
