@@ -1,0 +1,97 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/cutepuppies-admin/src",
+  "prefix": "myorg",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/cutepuppies-admin",
+        "index": "apps/cutepuppies-admin/src/index.html",
+        "main": "apps/cutepuppies-admin/src/main.ts",
+        "polyfills": "apps/cutepuppies-admin/src/polyfills.ts",
+        "tsConfig": "apps/cutepuppies-admin/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/cutepuppies-admin/src/favicon.ico",
+          "apps/cutepuppies-admin/src/assets"
+        ],
+        "styles": ["apps/cutepuppies-admin/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/cutepuppies-admin/src/environments/environment.ts",
+              "with": "apps/cutepuppies-admin/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "cutepuppies-admin:build:production"
+        },
+        "development": {
+          "browserTarget": "cutepuppies-admin:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "cutepuppies-admin:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/cutepuppies-admin/**/*.ts",
+          "apps/cutepuppies-admin/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/cutepuppies-admin/src/test.ts",
+        "tsConfig": "apps/cutepuppies-admin/tsconfig.spec.json",
+        "karmaConfig": "apps/cutepuppies-admin/karma.conf.js",
+        "polyfills": "apps/cutepuppies-admin/src/polyfills.ts",
+        "styles": [],
+        "scripts": [],
+        "assets": []
+      }
+    }
+  },
+  "tags": []
+}

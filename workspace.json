@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "branding-logger": "libs/branding/logger"
+    "branding-logger": "libs/branding/logger",
+    "cutepuppies-admin": "apps/cutepuppies-admin"
   }
 }

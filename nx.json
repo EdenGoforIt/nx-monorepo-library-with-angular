@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "myorg",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "tasksRunnerOptions": {
     "default": {
@@ -37,5 +37,6 @@
     "@nrwl/angular:component": {
       "style": "css"
     }
-  }
+  },
+  "defaultProject": "cutepuppies-admin"
 }
