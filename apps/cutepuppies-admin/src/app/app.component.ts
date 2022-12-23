@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggingService } from '@myorg/branding-logger';
 
 @Component({
   selector: 'myorg-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cutepuppies-admin';
+  constructor(private loggingService: LoggingService) {
+    this.loggingService.log('Hello World');
+  }
 }
